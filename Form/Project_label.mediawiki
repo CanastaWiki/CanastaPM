@@ -1,0 +1,22 @@
+<noinclude>
+This is the "Project label" form.
+
+{{#formlink: form=Project label
+|link text=<span class="mw-ui-button mw-ui-progressive">New label</span>
+}}
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{info|page name=Project:Project_labels/<unique number;random;4>}}}
+{{{for template|Project labels}}}
+<sub>Label:</sub>
+<p>{{{field|Label|mandatory}}}</p>
+<sub>Background color:</sub>
+<div id="color-picker">{{{field|Background|values={{:Project:Color list}}|input type=radiobutton|mandatory|default=Beige}}}</div> 
+
+<sub>Text style:</sub>
+<p>{{{field|Color|values=Light,Dark|input type=radiobutton|mandatory|default=Dark}}}</p> 
+{{{end template}}}
+<div style="margin-top: 1rem">
+{{{standard input|save}}} {{{standard input|cancel}}} 
+</div>
+</includeonly>
