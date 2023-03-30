@@ -1,0 +1,5 @@
+{{#cargo_query: tables=Task_labels
+  |fields=Label=Label
+  |where=_pageName='{{{1}}}'
+  |no html
+}}
