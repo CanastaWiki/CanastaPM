@@ -1,0 +1,45 @@
+<includeonly>
+|-
+|[[{{{Page}}}|{{{Task}}}]]
+|{{{Date_due|}}}
+|{{#arraymap: {{{Assignees|}}}
+  |;
+  |@@@
+  |{{#queryformlink: form=Filter tasks
+     |link text={{Get name|@@@}}
+     |Filter tasks[Assignees]=@@@
+     |_run=1
+   }}
+  |\s&middot;\s
+}}
+|{{#arraymap: {{{Reporters|}}}
+  |;
+  |@@@
+  |{{#queryformlink: form=Filter tasks
+     |link text={{Get name|@@@}}
+     |Filter tasks[Reporters]=@@@
+     |_run=1
+   }}
+  |\s&middot;\s
+}}</ul>
+|{{#queryformlink: form=Filter tasks
+   |link text={{{Status|}}}
+   |Filter tasks[Status]={{{Status|}}}
+   |_run=1
+}}
+|{{#arraymap: {{{Labels|}}}
+   |;
+   |@@@
+   |{{#cargo_query: tables=Task_labels
+      |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+      |where=_pageTitle='{{#explode:@@@|:|1}}'
+      |format=template
+      |template=Render label
+      |no html
+      |named args=yes
+    }}
+   |\s&middot;\s
+ }}
+{{#switch: {{{Show project|}}}|1|Yes|yes=
+{{!}} [[{{{Project|}}}]]
+}}</includeonly>
