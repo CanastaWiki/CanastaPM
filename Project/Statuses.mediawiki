@@ -1,0 +1,36 @@
+{{Status
+|Name=Open
+|Is review status=No
+|Is ending status=No
+|Kanban order=1
+}}
+{{Status
+|Name=In progress
+|Is review status=No
+|Is ending status=No
+|Kanban order=2
+}}
+{{Status
+|Name=Ready for review
+|Is review status=Yes
+|Is ending status=No
+|Kanban order=3
+}}
+{{Status
+|Name=Blocked
+|Is review status=No
+|Is ending status=No
+|Kanban order=4
+}}
+{{Status
+|Name=Completed
+|Is review status=No
+|Is ending status=Yes
+|Kanban order=5
+}}
+{{Status
+|Name=Declined
+|Is review status=No
+|Is ending status=Yes
+|Kanban order=6
+}}
