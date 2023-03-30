@@ -1,0 +1,21 @@
+<noinclude>
+{{#template_params:Name|Is review status|Is ending status|Kanban order}}
+{{#cargo_declare: _table=Statuses
+|Name=String (mandatory)
+|Is_review_status=Boolean
+|Is_ending_status=Boolean
+|Kanban_order=Number (mandatory)
+}}
+</noinclude><includeonly>
+<big>{{{Name}}}</big>
+* '''Order:''' {{{Kanban order|}}}
+* '''Is review status?''' {{{Is review status|false}}}
+* '''Is ending status?''' {{{Is ending status|false}}}<!--
+-->{{#cargo_store: _table=Statuses
+|Name={{{Name}}}
+|Is_review_status={{{Is review status|false}}}
+|Is_ending_status={{{Is ending status|false}}}
+|Kanban_order={{{Kanban order|0}}}
+}}<!--
+-->{{#default_form:Statuses}}
+</includeonly>
