@@ -1,0 +1,80 @@
+<noinclude>
+{{#template_params:Project|Task|Date due|Assignees|Reporters|Status|Date ended|Labels|Related pages|Resolution}}
+{{#cargo_declare: _table=Tasks
+|Project=Page (mandatory)
+|Task=String (mandatory)
+|Date_due=Date
+|Assignees=List (;) of Page 
+|Reporters=List (;) of Page
+|Status=String (allowed values={{Get status list}};mandatory)
+|Date_end=Date
+|Labels=List (;) of String
+|Related_pages=List (;) of Page
+|Resolution=Wikitext
+}}
+</noinclude><includeonly>
+{| class="wikitable kanban" width=100%
+|-
+! width=180px |Project
+| [[{{{Project|}}}]]
+|-
+! Due date
+| {{{Date due|}}}
+|-
+! Assignee(s)
+| {{#arraymap: {{{Assignees|}}}|;|@@@|{{#queryformlink: form=Filter tasks
+    |link text={{Get name|@@@}}
+    |Filter tasks[Assignees]=@@@
+    |_run=1
+  }}|&#32;&middot;&#32;}}
+|-
+! Reporter(s)
+| {{#arraymap: {{{Reporters|}}}|;|@@@|{{#queryformlink: form=Filter tasks
+    |link text={{Get name|@@@}}
+    |Filter tasks[Reporters]=@@@
+    |_run=1
+  }}|&#32;&middot;&#32;}}
+|-
+! Status
+| {{#queryformlink: form=Filter tasks
+    |link text={{{Status}}}
+    |Filter tasks[Status]={{{Status}}}
+    |_run=1
+  }}
+|-
+!Related page(s)
+|{{#arraymap: {{{Related pages|}}}
+   |;
+   |@@@
+   |[[@@@]]
+   |,\s
+}}</ul>
+{{#ifeq: {{{Status}}} |Closed|
+{{!}}-
+! Completed On
+{{!}} {{{Date ended|}}}
+{{!}}-
+! Resolution 
+{{!}} {{{Resolution|}}}
+}}
+|-
+!Labels
+|{{#arraymap: {{{Labels|}}}
+   |;
+   |@@@
+   |{{#cargo_query: tables=Task_labels
+      |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+      |where=_pageTitle='{{#explode:@@@|:|1}}'
+      |format=template
+      |template=Render label
+      |no html
+      |named args=yes
+    }}
+   |&#32;&middot;&#32;
+ }}
+|}
+
+{{#cargo_store:_table=Tasks}}
+{{DISPLAYTITLE: {{{Task|}}}}}
+[[Category:Tasks]]
+</includeonly>
