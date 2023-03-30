@@ -30,6 +30,11 @@
 						"fileNameSuffix": ".mediawiki"
 					},
 					{
+						"namespace": "NS_CATEGORY",
+						"fileNamePrefix": "Category/",
+						"fileNameSuffix": ".mediawiki"
+					},
+					{
 						"namespace": "PF_NS_FORM",
 						"fileNamePrefix": "Form/",
 						"fileNameSuffix": ".mediawiki"
