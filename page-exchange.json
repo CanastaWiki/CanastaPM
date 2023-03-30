@@ -45,7 +45,8 @@
 				"Page Forms",
 				"Variables",
 				"Cargo",
-				"ParserFunctions"
+				"ParserFunctions",
+				"HeaderTabs"
 			]
 		}
 	}
