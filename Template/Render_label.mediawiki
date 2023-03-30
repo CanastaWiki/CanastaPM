@@ -1,0 +1,9 @@
+<includeonly>{{#ifeq: {{{Active|}}}
+  |{{{Page|}}}
+  |<span style="background: {{{Background|inherit}}};color:{{#switch:{{{Color|}}}|Light=white|#default=black}}; padding: .125rem .5rem; display: inline-block;">'''{{{Label|}}}''' {{#if:{{{Count|}}}|({{{Count|}}})}}</span>
+  |{{#queryformlink: form=Filter tasks
+     |link text=<span style="background: {{{Background|inherit}}};color:{{#switch:{{{Color|}}}|Light=white|#default=black}}; padding: .125rem .5rem; display: inline-block;">{{{Label|}}} {{#if:{{{Count|}}}|({{{Count|}}})}}</span>
+     |Filter tasks[Labels]={{{Page|}}}
+     |_run=1
+   }}
+}}</includeonly>
