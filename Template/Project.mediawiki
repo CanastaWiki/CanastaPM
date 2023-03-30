@@ -1,0 +1,111 @@
+<noinclude>
+{{#template_params:Project manager|Status|Date due|Date started|Date ended|Labels}}
+{{#cargo_declare: _table=Projects
+|Project_manager=Page
+|Date_due=Date
+|Status=String (allowed values=In progress,Blocked,Closed)
+|Date_started=Start date
+|Date_ended=End date
+|Labels=List (;) of String
+}}
+</noinclude><includeonly><!--
+
+-->
+{| class="wikitable project-details" width=100%
+! width=180px |Project manager
+|{{#if:{{{Project manager|}}}|[[{{{Project manager|}}}]]|Not assigned}}
+|-
+!Start date
+|{{{Date started|Not set}}}
+|-
+!Due date
+|{{{Date due|Not set}}}
+|-
+!Status
+|{{{Status}}}
+{{#ifeq: {{{Status|}}}|Closed|
+{{!}}-
+!Completed on
+{{!}} {{{Date ended|Not set}}}
+}}
+|-
+!Labels
+|{{#arraymap: {{{Labels|}}}
+   |;
+   |@@@
+   |{{#cargo_query: tables=Project_labels
+      |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+      |where=_pageTitle='{{#explode:@@@|:|1}}'
+      |format=template
+      |template=Render project label
+      |no html
+      |named args=yes
+    }}
+   |&#32;&middot;&#32;
+ }}
+|}<!--
+
+-->
+{{#formlink: form=Task
+  |link text=<span class="mw-ui-button mw-ui-progressive"><i class="fas fa-plus"></i> Add task</span>
+  |Task[Project]={{FULLPAGENAME}}
+}} {{#queryformlink: form=Query tasks
+  |link text=<span class="mw-ui-button mw-ui-quiet" style="float:right"><i class="fas fa-filter"></i> Search tasks in this project</span>
+  |Query tasks[Project]={{FULLPAGENAME}}
+}}
+<!--
+
+--><div class="project-overview kanban">{{#vardefine: tcount|{{#cargo_query: tables=Tasks|fields=COUNT(_pageTitle)|where=Project='{{FULLPAGENAME}}'}}}}
+= Kanban =
+<p>Tasks: {{#var:tcount}}</p>
+{| class="wikitable kanban" width=100%
+{{#arraymap: {{Get status list}}
+  |,
+  |@@@
+  |! width=16.66% {{!}}@@@ (<span class="kanban-num-tasks">{{#cargo_query: tables=Tasks|fields=COUNT(_pageTitle)|where=Project='{{FULLPAGENAME}}' AND Status = '@@@'}}</span>) 
+  |\n
+}}
+|- valign=top
+{{#arraymap: {{Get status list}}
+  |,
+  |@@@
+  |{{!}} data-status="@@@" {{!}}
+{{{!}} class="sortable kanban-tasks" width=100% cellspacing="6"
+{{!}}-
+! style="height:1rem; display: block" {{!}}
+{{#cargo_query: tables=Tasks
+  |fields=_pageName=Page,Task=Task,Date_due=Date_due,Assignees=Assignees,Labels=Labels
+  |where=Project='{{FULLPAGENAME}}' AND Status='@@@'
+  |format=template
+  |template=Task kanban tile{{!}}Status={{#replace:{{lc:@@@}}| |-}}
+  |no html
+  |named args=yes
+  |default=
+}}
+{{!}}} 
+  |\n
+}}
+|}
+= All tasks =
+<p>Tasks: {{#var:tcount}}</p>
+{| class="wikitable sortable all-tasks" width=100%
+!Task
+!Due date
+!Assignee(s)
+!Reporter(s)
+!Status
+!Labels
+{{#cargo_query: tables=Tasks
+|fields=_pageName=Page,Task=Task,Date_due=Date_due,Assignees=Assignees,Reporters=Reporters,Status=Status,Labels=Labels
+|where=Project='{{FULLPAGENAME}}'
+|format=template
+|template=Task table row
+|no html
+|named args=yes
+}}
+|}
+<headertabs/>
+</div>
+{{#cargo_store:_table=Projects}}
+[[Category:Projects]]
+</includeonly>
