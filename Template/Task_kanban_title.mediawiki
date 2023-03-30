@@ -1,0 +1,21 @@
+<includeonly>
+<tr>
+<td class="kanban-tile">
+  <div class="title {{{Status|}}}">[[{{{Page|}}}|'''{{{Task}}}''']]</div>
+  <div><small>Due date: {{{Date_due|}}}</small></div>
+  <div><sup>Assignee(s): {{#arraymap:{{{Assignees|}}}
+    |;
+    |@@@
+    |{{#queryformlink: form=Filter tasks
+       |link text={{Get name|@@@}}
+       |Filter tasks[Assignees]=@@@
+       |_run=1
+     }}
+    |,\s
+  }}</sup></div>{{#switch: {{{Show project|}}}
+    |1
+    |Yes
+    |yes=<div><small>Project: [[{{{Project|}}}]]</sup></div>
+  }}
+</td>
+</tr></includeonly>
