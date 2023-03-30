@@ -1,0 +1,7 @@
+{{#cargo_query: tables=Statuses
+|fields=Name
+|order by=Kanban_order ASC
+|where=Kanban_order > 0 {{#ifeq: {{{Is ending status|}}}|1| AND Is_ending_status = true}}{{#ifeq: {{{Is review status|}}}|1| AND Is_review_status = true}}
+|format=list
+|no html
+}}
