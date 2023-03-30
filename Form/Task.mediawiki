@@ -1,0 +1,45 @@
+<noinclude>
+This is the "Task" form.
+
+{{#formlink:form=Task|link type=button|link text=Create new task}}
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{info|page name=<Task[Project]>/<unique number;random;6>}}}
+{{{for template|Task}}}
+{| class="formtable"
+! Project:
+| {{{field|Project|mandatory|cargo table=Projects|cargo field=_pageTitle|mapping cargo field=_pageName}}}
+|-
+! Task:
+| {{{field|Task|mandatory}}}
+|-
+! Date due:
+| {{{field|Date due|input type=datepicker|mandatory}}}
+|-
+! Assignee(s):
+| {{{field|Assignees|input type=tokens|values from category=People|list|delimiter=;}}}
+|-
+! Reporter(s):
+| {{{field|Reporters|input type=tokens|values from category=People|list|delimiter=;}}}
+|-
+! Task status:
+| {{:Template:Status field}}
+|- id="date_end"
+! Date ended:
+| {{{field|Date ended|input type=datepicker|default=now}}}
+|-
+! Task labels:
+| {{{field|Labels|input type=tokens|values from category=Task labels|cargo table=Task_labels|cargo field=Label|list|delimiter=;}}}
+|-
+! Related pages:
+| {{{field|Related pages|input type=tokens|list|delimiter=;}}}
+|- id="resolution"
+! Resolution:
+| {{{field|Resolution|input type=textarea}}}
+|}
+{{{end template}}}
+
+'''Details:'''
+
+{{{standard input|free text|rows=10}}}
+</includeonly>
