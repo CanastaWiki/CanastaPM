@@ -30,7 +30,7 @@
 !End date
 !Labels
 {{#cargo_query: tables=Projects
-|fields=Project_manager=Project_manager,Status,Date_started,Date_du,Date_ended,Labels,_pageName=Page
+|fields=Project_manager=Project_manager,Status,Date_started,Date_due,Date_ended,Labels,_pageName=Page
 |where=Status='Blocked'
 |format=template
 |template=Project table row
