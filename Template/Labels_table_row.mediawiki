@@ -1,0 +1,4 @@
+<includeonly>
+<tr>
+<td style="background: {{{Background|inherit}}}; padding: .25rem 1rem">[[{{{Page|}}}|<span style="color:{{#switch:{{{Color|}}}|Light=white|#default=black}}">{{{Label|}}}</span>]]</td>
+</includeonly>
