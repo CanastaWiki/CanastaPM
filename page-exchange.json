@@ -1,11 +1,11 @@
 {
 	"publisher": "Canasta Project",
-	"author": "Bryan Hilderbrand",
+	"author": "Yaron Koren",
 	"language": "en",
 	"licenseName": "CC-BY-SA 3.0",
-	"url": "https:\/\/github.com\/CanastaWiki\/CanastaPXConsultingCRM",
+	"url": "https:\/\/github.com\/yaronkoren\/CanastaPM",
 	"packages": {
-		"Canasta Consulting CRM": {
+		"Canasta PM": {
 			"globalID": "wiki.canasta.projectmanagement",
 			"description": "A general project management package.",
 			"version": "0.1",
