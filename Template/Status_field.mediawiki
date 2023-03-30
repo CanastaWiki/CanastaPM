@@ -1,0 +1,1 @@
+<includeonly><nowiki>{{{</nowiki>field<nowiki>|</nowiki>Status<nowiki>|</nowiki>mandatory<nowiki>|</nowiki>default=Blocked<nowiki>|</nowiki>values={{Get status list}}<nowiki>|</nowiki>show on select={{#arraymap:{{Get status list|Is ending status=1}}|,|@@@|@@@=>date_end;@@@=>resolution;|}} <nowiki>}}}</nowiki></includeonly>
