@@ -1,0 +1,37 @@
+<includeonly>{{#ifeq: {{{value}}}
+  |{{{active}}}
+  |{{#queryformlink: form=Query tasks
+     |link text=<span class="mw-ui-button mw-ui-quiet" style="float:right"><i class="fas fa-filter"></i> Extended filter</span>
+     |Query tasks[{{{param}}}]={{{value}}}
+   }}<!--
+
+-->{{#switch:{{{param}}}
+     |Assignees
+     |Reporters={{#queryformlink: form=Tasks
+        |link text=<span class="mw-ui-button mw-ui-progressive" style="float:right">{{Get name|{{{value}}}}}: Overview</span>
+        |Tasks[1]={{{value}}}
+        |_run=1
+      }}
+     |#default=
+   }}
+}}<!--
+
+-->{{#ifeq: {{{param}}}
+  |Labels
+  |{{#cargo_query: tables=Task_labels
+     |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+     |where=_pageName='{{{value}}}'
+     |format=template
+     |template=Render label{{!}}Count={{{count}}}{{!}}Active={{{active}}}
+     |named args=yes
+   }}
+  |{{#ifeq:{{{value}}}
+     |{{{active}}}
+     |'''{{#ifeq: {{NAMESPACE:{{{value}}}}}|User|{{REALNAME:{{{value}}}}}|{{PAGENAME:{{{value}}}}}}}'''
+     |{{#queryformlink: form=Filter tasks
+        |link text={{Get name|{{{value}}}}}
+        |Filter tasks[{{{param}}}]={{{value}}}
+        |_run=1
+      }}
+   }} ({{{count}}})
+}}</includeonly>
