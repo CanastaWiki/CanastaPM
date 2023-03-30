@@ -1,0 +1,47 @@
+{
+	"publisher": "Canasta Project",
+	"author": "Bryan Hilderbrand",
+	"language": "en",
+	"licenseName": "CC-BY-SA 3.0",
+	"url": "https:\/\/github.com\/CanastaWiki\/CanastaPXConsultingCRM",
+	"packages": {
+		"Canasta Consulting CRM": {
+			"globalID": "wiki.canasta.projectmanagement",
+			"description": "A general project management package.",
+			"version": "0.1",
+			"directoryStructure": {
+				"service": "GitHub",
+				"accountName": "yaronkoren",
+				"repositoryName": "CanastaPM",
+				"namespaceSettings": [
+					{
+						"namespace": "NS_MEDIAWIKI",
+						"fileNamePrefix": "MediaWiki/",
+						"fileNameSuffix": ".mediawiki"
+					},
+					{
+						"namespace": "NS_PROJECT",
+						"fileNamePrefix": "Project/",
+						"fileNameSuffix": ".mediawiki"
+					},
+					{
+						"namespace": "NS_TEMPLATE",
+						"fileNamePrefix": "Template/",
+						"fileNameSuffix": ".mediawiki"
+					},
+					{
+						"namespace": "PF_NS_FORM",
+						"fileNamePrefix": "Form/",
+						"fileNameSuffix": ".mediawiki"
+					}
+				]
+			},
+			"requiredExtensions": [
+				"Page Forms",
+				"Variables",
+				"Cargo",
+				"ParserFunctions"
+			]
+		}
+	}
+}
