@@ -1,0 +1,31 @@
+{{#cargo_query: table=Tasks
+|where={{#arraymap: Project, Status, Assignees, Reporters, Related_pages, Labels
+         |,
+         |@@@
+         |{{#if:{{{@@@|}}}|{{#arraymap: {{{@@@|}}}
+            |,
+            |$$$
+            |@@@ {{#switch:@@@|Project|Status=like|#default=holds like}} '$$$'
+            |\sOR\s
+          }}
+       }}
+      |\sAND\s
+    }}
+|fields=Project=Project,Task=Task,Date_due=Date_due,Assignees=Assignees,Reporters=Reporters,Status=Status,Date_end=Date_end,Labels=Labels,Related_pages=Related_pages,_pageName=Page
+  |format=template
+  |template=Filter tasks item
+  |named args=yes
+  |link=none
+  |intro=<table class="wikitable sortable kanban" width="100%">
+<tr>
+<th>Task</th>
+<th>Due date</th>
+<th>Assignee(s)</th>
+<th>Reporter(s)</th>
+<th>Status</th>
+<th>Labels</th>
+<th>Project</th>
+</tr>
+  |outro=</table>
+  |delimiter=\n
+}}
