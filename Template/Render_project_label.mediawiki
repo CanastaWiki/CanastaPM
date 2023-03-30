@@ -1,0 +1,1 @@
+<includeonly><span style="background: {{{Background|inherit}}};color:{{#switch:{{{Color|}}}|Light=white|#default=black}}; padding: .125rem .5rem; display: inline-block;">{{{Label|}}}</span></includeonly>
