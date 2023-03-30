@@ -1,0 +1,50 @@
+<div class="kanban-filters">{{#arraymap: Status,Assignees,Reporters,Labels
+ |,
+ |@@@
+ |{{#if: {{{@@@|}}}|<h2>{{#replace:@@@|_|&nbsp;}}</h2> <!--
+
+--><div>{{#cargo_query: tables=Tasks
+      |where=@@@ {{#switch: @@@|Status=|#default=holds}} like '%%'
+      |group by=@@@
+      |fields=@@@=value,COUNT(_pageName)=count
+      |format=template
+      |template=Filter values{{!}}param=@@@{{!}}active={{{@@@}}}
+      |named args=yes
+      |delimiter=&#32;&middot;&#32;
+    }}</div>
+  }}
+ |
+}}
+</div><!--
+
+-->{{#cargo_query: tables=Tasks
+  |where={{#arraymap: Status
+    |,
+    |@@@
+    |{{#if:{{{@@@|}}}|@@@ = '{{{@@@|}}}' }} 
+    |AND 
+   }} {{#if: {{{Assignees|}}}{{{Reporters|}}}{{{Labels|}}}{{{Related_pages|}}}|{{#if:{{{Status|}}}|AND}}}} {{#arraymap: Assignees,Reporters,Labels
+    |,
+    |@@@
+    |{{#if:{{{@@@|}}}|@@@ HOLDS '{{{@@@|}}}' }}
+    |AND
+   }}
+|fields=Project=Project,Task=Task,Date_due=Date_due,Assignees=Assignees,Reporters=Reporters,Status=Status,Date_end=Date_end,Labels=Labels,Related_pages=Related_pages,_pageName=Page
+  |format=template
+  |template=Filter tasks item
+  |named args=yes
+  |link=none
+  |intro=<table class="wikitable sortable kanban" width="100%">
+<tr>
+<th>Task</th>
+<th>Due date</th>
+<th>Assignee(s)</th>
+<th>Reporter(s)</th>
+<th>Status</th>
+<th>Labels</th>
+<th>Project</th>
+</tr>
+  |outro=</table>
+  |delimiter=\n
+}}
+<noinclude></noinclude>
