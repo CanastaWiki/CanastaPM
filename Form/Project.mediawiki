@@ -1,0 +1,35 @@
+<noinclude>
+This is the "Project" form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+{{#forminput:form=Project|autocomplete on category=Projects}}
+
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{for template|Project}}}
+{| class="formtable"
+! Project manager:<br><sup style="font-size:.75rem;color: #665;font-weight:400">Pages in category [[:Category:Project managers|Project managers]].</sup>
+| {{{field|Project manager|input type=dropdown|values from category=Project managers}}}
+|-
+! Date due:
+| {{{field|Date due|input type=datepicker}}}
+|-
+! Status: 
+| {{{field|Status|input type=dropdown|show on select=In progress=>started;Closed=>ended;Closed=>started;|mandatory|default=In progress}}}
+|- id="started"
+! Date started: 
+| {{{field|Date started|input type=datepicker}}}
+|- id="ended"
+! Date complete: 
+| {{{field|Date ended|input type=datepicker}}}
+|-
+! Labels:<br><sup style="font-size:.75rem;color: #665;font-weight:400">Manage labels [[Project:Project labels|here]].</sup>
+| {{{field|Labels|input type=tokens|values from category=Project labels|cargo table=Project_labels|cargo field=Label|list|delimiter=;}}}
+|}
+{{{end template}}}
+
+'''Details:'''
+
+{{{standard input|free text|rows=10}}}
+</includeonly>
