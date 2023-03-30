@@ -1,0 +1,69 @@
+{{#default_form: Project}}
+<div class="kanban">
+=In progress=
+{| class="wikitable sortable kanban" width="100%"
+!Project
+!Project manager
+!Status
+!Start date
+!Due date
+!End date
+!Labels 
+{{#cargo_query: tables=Projects
+|fields=Project_manager=Project_manager,Status,Date_started,Date_due,Date_complete,Labels,_pageName=Page
+|where=Status='In progress'
+|format=template
+|template=Project table row
+|no html
+|named args=yes
+|default={{!}}-
+{{!}} colspan=7 {{!}} No results.
+}}
+|}
+=Blocked=
+{| class="wikitable sortable kanban" width="100%"
+!Project
+!Project manager
+!Status
+!Start date
+!Due date
+!End date
+!Labels
+{{#cargo_query: tables=Projects
+|fields=Project_manager=Project_manager,Status=Status,Date_started=Date_started,Date_due=Date_due,Date_end=Date_end,Labels=Labels,_pageName=Page
+|where=Status='Blocked'
+|format=template
+|template=Project table row
+|no html
+|named args=yes
+|default={{!}}-
+{{!}} colspan=7 {{!}} No results.
+}}
+|}
+=Closed=
+{| class="wikitable sortable kanban" width="100%"
+!Project
+!Project manager
+!Status
+!Start date
+!Due date
+!End date
+!Labels
+{{#cargo_query: tables=Projects
+|fields=Project_manager=Project_manager,Status=Status,Date_started=Date_started,Date_due=Date_due,Date_end=Date_end,Labels=Labels,_pageName=Page
+|where=Status='Closed'
+|format=template
+|template=Project table row
+|no html
+|named args=yes
+|default={{!}}-
+{{!}} colspan=7 {{!}} No results.
+}}
+|}
+= Create Project =
+<div style="margin-top:1rem">
+{{#forminput:form=Project|placeholder=Name of project|button text=Create}}
+</div>
+<headertabs/>
+__NOTOC__
+</div>
