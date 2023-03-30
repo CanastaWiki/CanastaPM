@@ -1,0 +1,13 @@
+{{#formlink: form=Project label
+|link text=<span class="mw-ui-button mw-ui-progressive">New label</span>
+}}<!-- -->{{DISPLAYTITLE:{{PAGENAME}}}}
+== Available Labels ==
+{{#cargo_query: tables=Project_labels
+|fields=Label=Label,Color=Color,Background=Background,_pageName=Page
+|intro=<table class="kanban" style="text-align: center;width: 100%" cellspacing="6">
+|outro=</table>
+|no html
+|format=template
+|template=Labels table row
+|named args=yes
+}}
