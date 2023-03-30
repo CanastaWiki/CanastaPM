@@ -1,0 +1,36 @@
+<includeonly>
+{{{for template|Query tasks}}}
+'''Project:'''
+
+{{{field|Project|input type=combobox|values from category=Projects}}}
+
+'''Status''' (OR):
+
+{{{field|Status|input type=checkboxes|values={{#cargo_query: table=Statuses
+  |fields=Label
+  |format=list
+  |order by=Kanban_order
+  |no html
+}} }}}
+
+'''Assignees''' (OR):
+
+{{{field|Assignees|cargo table=Tasks|cargo field=Assignees|mapping template=Get name}}}
+
+'''Reporters''' (OR):
+
+{{{field|Reporters|cargo table=Tasks|cargo field=Reporters|mapping template=Get name}}}
+
+'''Label:'''
+
+{{{field|Labels|input type=combobox|cargo table=Tasks|cargo field=Labels|mapping template=Get task label}}}
+
+'''Related pages''' (OR):
+
+{{{field|Related_pages|input type=tokens|values from category=Tasks}}}
+{{{end template}}}
+{{{standard input|run query}}}
+</includeonly><noinclude>
+This is the "Query tasks" form.
+{{#queryformlink:form=Query tasks|link text=Click here to use this form.}}
+</noinclude>
