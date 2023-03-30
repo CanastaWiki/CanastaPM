@@ -1,0 +1,22 @@
+<includeonly>
+|-
+|[[{{{Page}}}]]
+|[[{{{Project_manager|}}}]]
+|{{{Status|}}}
+|{{{Date_started|}}}
+|{{{Date_due|}}}
+|{{{Date_end|}}}
+|{{#arraymap: {{{Labels|}}}
+   |;
+   |@@@
+   |{{#cargo_query: tables=Project_labels
+      |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+      |where=_pageTitle='{{#explode:@@@|:|1}}'
+      |format=template
+      |template=Render project label
+      |no html
+      |named args=yes
+    }}
+   |&#32;&middot;&#32;
+ }}
+</includeonly>
