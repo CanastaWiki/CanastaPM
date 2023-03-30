@@ -1,0 +1,16 @@
+<noinclude>
+{{#cargo_declare: _table=Task_labels
+|Label=String (unique;mandatory)
+|Background=String
+|Color=String
+}}
+</noinclude><includeonly>
+<div style="background:{{{Background|}}};padding: .5rem 1rem;margin: .25rem 0;text-align: center"><span style="color:{{#switch:{{{Color|}}}|Light=white|#default=black}}">{{{Label|}}}</span></div>
+{{#cargo_store: _table = Task_labels
+|Label={{{Label}}}
+|Background={{{Background|}}}
+|Color={{{Color|}}}
+}}
+[[Category:Task labels]]
+{{DISPLAYTITLE: {{{Label}}}|noreplace}}
+</includeonly>
