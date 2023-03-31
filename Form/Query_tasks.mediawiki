@@ -7,7 +7,7 @@
 '''Status''' (OR):
 
 {{{field|Status|input type=checkboxes|values={{#cargo_query: table=Statuses
-  |fields=Label
+  |fields=Name
   |format=list
   |order by=Kanban_order
   |no html
