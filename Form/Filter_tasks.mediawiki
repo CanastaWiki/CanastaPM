@@ -5,7 +5,6 @@
 {{{field|Task|hidden}}}
 {{{field|Date_due|hidden}}}
 {{{field|Assignees|hidden}}}
-{{{field|Reporters|hidden}}}
 {{{field|Date_end|hidden}}}
 {{{field|Labels|hidden}}}
 {{{field|Status|hidden}}}
