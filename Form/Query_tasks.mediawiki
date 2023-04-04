@@ -17,10 +17,6 @@
 
 {{{field|Assignees|cargo table=Tasks|cargo field=Assignees|mapping template=Get name}}}
 
-'''Reporters''' (OR):
-
-{{{field|Reporters|cargo table=Tasks|cargo field=Reporters|mapping template=Get name}}}
-
 '''Label:'''
 
 {{{field|Labels|input type=combobox|cargo table=Tasks|cargo field=Labels|mapping template=Get task label}}}
