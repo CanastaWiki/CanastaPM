@@ -11,21 +11,21 @@ if a page with that name already exists, you will be sent to a form to edit that
 {| class="formtable"
 ! Project manager:<br><sup style="font-size:.75rem;color: #665;font-weight:400">Pages in category [[:Category:Project managers|Project managers]].</sup>
 | {{{field|Project manager|input type=dropdown|values from category=Project managers}}}
+|- id="started"
+! Date started: 
+| {{{field|Date started|input type=datepicker}}}
 |-
 ! Date due:
 | {{{field|Date due|input type=datepicker}}}
 |-
 ! Status: 
 | {{{field|Status|input type=dropdown|show on select=In progress=>started;Closed=>ended;Closed=>started;|mandatory|default=In progress}}}
-|- id="started"
-! Date started: 
-| {{{field|Date started|input type=datepicker}}}
 |- id="ended"
 ! Date complete: 
 | {{{field|Date ended|input type=datepicker}}}
 |-
 ! Labels:<br><sup style="font-size:.75rem;color: #665;font-weight:400">Manage labels [[Project:Project labels|here]].</sup>
-| {{{field|Labels|input type=tokens|values from category=Project labels|cargo table=Project_labels|cargo field=Label|list|delimiter=;|existing values only}}}
+| {{{field|Labels|input type=tokens|values from category=Project labels|delimiter=;|existing values only}}}
 |}
 {{{end template}}}
 
