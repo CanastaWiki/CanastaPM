@@ -10,3 +10,4 @@
 |template=Labels table row
 |named args=yes
 }}
+__NOCACHE__
