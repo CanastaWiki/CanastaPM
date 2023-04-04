@@ -45,8 +45,8 @@ $('table.kanban-tasks').parent('td')
   $oldNumTasksDisplay.text(parseInt($oldNumTasksDisplay.text()) - 1);
   $newNumTasksDisplay.text(parseInt($newNumTasksDisplay.text()) + 1);
   
-  var apiURL = '/w/api.php?action=pfautoedit&form=Task&target=' + encodeURIComponent(taskName) +
-	'&query=Task[Status]=' + newStatus;
+  var apiURL = mw.config.get( 'wgScriptPath' ) + '/api.php?action=pfautoedit&form=Task&target=' +
+	encodeURIComponent(taskName) + '&query=Task[Status]=' + newStatus;
   $.get(apiURL);
   var actualItem = $kanbanTask.find('td')[0];
   actualItem.addEventListener('dragstart', handleDragStart);
