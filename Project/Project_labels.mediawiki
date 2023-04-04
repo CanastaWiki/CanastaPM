@@ -11,4 +11,4 @@
 |named args=yes
 }}
 
-__MAGICNOCACHE__
+__NOCACHE__
