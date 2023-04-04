@@ -5,7 +5,7 @@ This is the "Task label" form.
 </noinclude><includeonly>
 <div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
 {{{info|page name=Project:Task_labels/<unique number;random;4>}}}
-{{{for template|Task labels}}}
+{{{for template|Task label}}}
 <sub>Label:</sub>
 <p>{{{field|Label|mandatory}}}</p>
 <sub>Background color:</sub>
