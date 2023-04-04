@@ -29,7 +29,7 @@ This is the "Task" form.
 | {{{field|Date ended|input type=datepicker|default=now}}}
 |-
 ! Task labels:<br><sup style="font-size:.75rem;color: #665;font-weight:400">Manage labels [[Project:Task labels|here]].</sup>
-| {{{field|Labels|input type=tokens|values from category=Task labels|cargo table=Task_labels|cargo field=Label|delimiter=;|existing values only}}}
+| {{{field|Labels|input type=tokens|values from category=Task labels|delimiter=;|existing values only}}}
 |-
 ! Related pages:
 | {{{field|Related pages|input type=tokens|delimiter=;}}}
