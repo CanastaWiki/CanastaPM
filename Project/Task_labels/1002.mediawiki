@@ -1,4 +1,4 @@
-{{Task labels
+{{Task label
 |Label=Urgent
 |Background=#f9d8d6
 |Color=Dark
