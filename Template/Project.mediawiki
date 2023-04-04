@@ -106,6 +106,6 @@
 <headertabs/>
 </div>
 {{#cargo_store:_table=Projects}}
-__MAGICNOCACHE__
+__NOCACHE__
 [[Category:Projects]]
 </includeonly>
