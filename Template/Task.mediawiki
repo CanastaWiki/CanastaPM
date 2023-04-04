@@ -4,8 +4,7 @@
 |Project=Page (mandatory)
 |Task=String (mandatory)
 |Date_due=Date
-|Assignees=List (;) of Page 
-|Reporters=List (;) of Page
+|Assignees=List (;) of Page
 |Status=String (allowed values={{Get status list}};mandatory)
 |Date_end=Date
 |Labels=List (;) of String
@@ -25,13 +24,6 @@
 | {{#arraymap: {{{Assignees|}}}|;|@@@|{{#queryformlink: form=Filter tasks
     |link text={{Get name|@@@}}
     |Filter tasks[Assignees]=@@@
-    |_run=1
-  }}|&#32;&middot;&#32;}}
-|-
-! Reporter(s)
-| {{#arraymap: {{{Reporters|}}}|;|@@@|{{#queryformlink: form=Filter tasks
-    |link text={{Get name|@@@}}
-    |Filter tasks[Reporters]=@@@
     |_run=1
   }}|&#32;&middot;&#32;}}
 |-
