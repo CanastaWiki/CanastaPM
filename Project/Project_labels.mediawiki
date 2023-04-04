@@ -10,3 +10,5 @@
 |template=Labels table row
 |named args=yes
 }}
+
+__MAGICNOCACHE__
