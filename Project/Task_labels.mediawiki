@@ -1,0 +1,12 @@
+{{#formlink:form=Task label|link type=post button|link text=New label}}
+
+== Available labels ==
+{{#cargo_query: tables=Task_labels
+|fields=Label=Label,Color=Color,Background=Background,_pageName=Page
+|intro=<table class="kanban" style="text-align: center;width: 100%" cellspacing="6">
+|outro=</table>
+|no html
+|format=template
+|template=Labels table row
+|named args=yes
+}}
