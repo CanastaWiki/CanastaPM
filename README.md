@@ -6,8 +6,9 @@ Though it includes "Canasta" in its name, Canasta PM does not require the [Canas
 
 Among Canasta PM's features are editable labels and statuses, and a drag-and-drop [Kanban board](https://en.wikipedia.org/wiki/Kanban_board), in which moving a task from one status column to another will indeed change that task's own status.
 
-To make use of this package within your wiki, add the following to LocalSettings.php, below the inclusion of Page Exchange:
+To make use of this package within your wiki, add the following lines to LocalSettings.php, below the inclusion of Page Exchange:
 
 ```php
 $wgPageExchangePackageFiles[] = 'https://raw.githubusercontent.com/yaronkoren/CanastaPM/main/page-exchange.json';
+$wgRestrictDisplayTitle = false;
 ```
