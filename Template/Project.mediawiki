@@ -8,9 +8,7 @@
 |Date_ended=End date
 |Labels=List (;) of String
 }}
-</noinclude><includeonly><!--
-
--->
+</noinclude><includeonly>
 {| class="wikitable project-details" width=100%
 ! width=180px |Project manager
 |{{#if:{{{Project manager|}}}|[[{{{Project manager|}}}]]|Not assigned}}
@@ -34,7 +32,7 @@
    |;
    |@@@
    |{{#cargo_query: tables=Project_labels
-      |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+      |fields=Label,Background,Color,_pageName=Page
       |where=_pageTitle='{{#explode:@@@|:|1}}'
       |format=template
       |template=Render project label
@@ -46,13 +44,14 @@
 |}<!--
 
 -->
-{{#formlink: form=Task
-  |link text=<span class="mw-ui-button mw-ui-progressive"><i class="fas fa-plus"></i> Add task</span>
-  |Task[Project]={{FULLPAGENAME}}
-}} {{#queryformlink: form=Query tasks
-  |link text=<span class="mw-ui-button mw-ui-quiet" style="float:right"><i class="fas fa-filter"></i> Search tasks in this project</span>
+{| style="width: 100%;"
+|{{#formlink:form=Task|link type=post button|link text=Add task|Task[Project]={{FULLPAGENAME}}}}
+| style="text-align: right;" | {{#queryformlink:form=Query tasks
+  |link type=post button
+  |link text=Search tasks in this project
   |Query tasks[Project]={{FULLPAGENAME}}
 }}
+|}
 <!--
 
 --><div class="project-overview kanban">{{#vardefine: tcount|{{#cargo_query: tables=Tasks|fields=COUNT(_pageTitle)|where=Project='{{FULLPAGENAME}}'}}}}
