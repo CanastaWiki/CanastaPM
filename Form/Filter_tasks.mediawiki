@@ -1,0 +1,16 @@
+<includeonly>
+{{{info|query title=Tasks|query form at top}}}
+{{{for template|Filter tasks}}}
+{{{field|Project|hidden}}}
+{{{field|Task|hidden}}}
+{{{field|Date_due|hidden}}}
+{{{field|Assignees|hidden}}}
+{{{field|Reporters|hidden}}}
+{{{field|Date_end|hidden}}}
+{{{field|Labels|hidden}}}
+{{{field|Status|hidden}}}
+{{{field|Related_pages|hidden}}}
+{{{end template}}}
+{{{standard input|save|class=kanban-hide}}}
+</includeonly>
+A headless query form for quick filtering.
