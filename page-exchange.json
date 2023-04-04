@@ -41,11 +41,12 @@
 				]
 			},
 			"requiredExtensions": [
-				"Page Forms",
-				"Variables",
 				"Cargo",
+				"DisplayTitle",
+				"HeaderTabs",
+				"Page Forms",
 				"ParserFunctions",
-				"HeaderTabs"
+				"Variables"
 			]
 		}
 	}
