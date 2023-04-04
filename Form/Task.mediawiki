@@ -14,13 +14,10 @@ This is the "Task" form.
 | {{{field|Task|mandatory}}}
 |-
 ! Date due:
-| {{{field|Date due|input type=datepicker|mandatory}}}
+| {{{field|Date due|input type=datepicker}}}
 |-
 ! Assignee(s):
 | {{{field|Assignees|input type=tokens|values from category=People|delimiter=;}}}
-|-
-! Reporter(s):
-| {{{field|Reporters|input type=tokens|values from category=People|delimiter=;}}}
 |-
 ! Task status:
 | {{:Template:Status field}}
