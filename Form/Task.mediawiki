@@ -1,7 +1,7 @@
 <noinclude>
 This is the "Task" form.
 
-{{#formlink:form=Task|link type=button|link text=Create new task}}
+{{#formlink:form=Task|link type=post button|link text=Create new task}}
 </noinclude><includeonly>
 <div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
 {{{info|page name=<Task[Project]>/<unique number;random;6>}}}
@@ -17,10 +17,10 @@ This is the "Task" form.
 | {{{field|Date due|input type=datepicker|mandatory}}}
 |-
 ! Assignee(s):
-| {{{field|Assignees|input type=tokens|values from category=People|list|delimiter=;}}}
+| {{{field|Assignees|input type=tokens|values from category=People|delimiter=;}}}
 |-
 ! Reporter(s):
-| {{{field|Reporters|input type=tokens|values from category=People|list|delimiter=;}}}
+| {{{field|Reporters|input type=tokens|values from category=People|delimiter=;}}}
 |-
 ! Task status:
 | {{:Template:Status field}}
@@ -29,10 +29,10 @@ This is the "Task" form.
 | {{{field|Date ended|input type=datepicker|default=now}}}
 |-
 ! Task labels:
-| {{{field|Labels|input type=tokens|values from category=Task labels|cargo table=Task_labels|cargo field=Label|list|delimiter=;}}}
+| {{{field|Labels|input type=tokens|values from category=Task labels|cargo table=Task_labels|cargo field=Label|delimiter=;}}}
 |-
 ! Related pages:
-| {{{field|Related pages|input type=tokens|list|delimiter=;}}}
+| {{{field|Related pages|input type=tokens|delimiter=;}}}
 |- id="resolution"
 ! Resolution:
 | {{{field|Resolution|input type=textarea}}}
