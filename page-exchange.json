@@ -16,8 +16,7 @@
 				"namespaceSettings": [
 					{
 						"namespace": "NS_MEDIAWIKI",
-						"fileNamePrefix": "MediaWiki/",
-						"fileNameSuffix": ".mediawiki"
+						"fileNamePrefix": "MediaWiki/"
 					},
 					{
 						"namespace": "NS_PROJECT",
