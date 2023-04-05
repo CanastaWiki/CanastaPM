@@ -29,7 +29,7 @@
     |{{#if:{{{@@@|}}}|@@@ HOLDS '{{{@@@|}}}' }}
     |AND
    }}
-|fields=Project,Task,Date_du,Assignees,Status,Date_end,Labels,Related_pages,_pageName=Page
+|fields=Project,Task,Date_due,Assignees,Status,Date_end,Labels,Related_pages,_pageName=Page
   |format=template
   |template=Filter tasks item
   |named args=yes
