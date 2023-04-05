@@ -23,13 +23,13 @@
     |@@@
     |{{#if:{{{@@@|}}}|@@@ = '{{{@@@|}}}' }} 
     |AND 
-   }} {{#if: {{{Assignees|}}}{{{Reporters|}}}{{{Labels|}}}{{{Related_pages|}}}|{{#if:{{{Status|}}}|AND}}}} {{#arraymap: Assignees,Reporters,Labels
+   }} {{#if: {{{Assignees|}}}{{{Labels|}}}{{{Related_pages|}}}|{{#if:{{{Status|}}}|AND}}}} {{#arraymap: Assignees,Labels
     |,
     |@@@
     |{{#if:{{{@@@|}}}|@@@ HOLDS '{{{@@@|}}}' }}
     |AND
    }}
-|fields=Project=Project,Task=Task,Date_due=Date_due,Assignees=Assignees,Reporters=Reporters,Status=Status,Date_end=Date_end,Labels=Labels,Related_pages=Related_pages,_pageName=Page
+|fields=Project,Task,Date_du,Assignees,Status,Date_end,Labels,Related_pages,_pageName=Page
   |format=template
   |template=Filter tasks item
   |named args=yes
@@ -39,7 +39,6 @@
 <th>Task</th>
 <th>Due date</th>
 <th>Assignee(s)</th>
-<th>Reporter(s)</th>
 <th>Status</th>
 <th>Labels</th>
 <th>Project</th>
