@@ -46,4 +46,3 @@
   |outro=</table>
   |delimiter=\n
 }}
-<noinclude></noinclude>
