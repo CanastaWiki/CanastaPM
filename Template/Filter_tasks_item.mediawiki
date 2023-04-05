@@ -11,16 +11,6 @@
        }}
       |\s&middot;\s
     }}</td>
-<td>{{#arraymap: {{{Reporters|}}}
-      |;
-      |@@@
-      |{{#queryformlink: form=Filter tasks
-         |link text={{Get name|@@@}}
-         |Filter tasks[Reporters]=@@@
-         |_run=1
-       }}
-      |\s&middot;\s
-    }}</td>
 <td>{{#queryformlink: form=Filter tasks
       |link text={{{Status|}}}
       |Filter tasks[Status]={{{Status|}}}
@@ -30,7 +20,7 @@
       |;
       |@@@
       |{{#cargo_query: tables=Task_labels
-         |fields=Label=Label,Background=Background,Color=Color,_pageName=Page
+         |fields=Label,Background,Color,_pageName=Page
          |where=_pageTitle='{{#explode:@@@|:|1}}'
          |format=template
          |template=Render label
