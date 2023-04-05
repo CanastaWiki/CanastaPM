@@ -9,6 +9,6 @@ Among Canasta PM's features are editable labels and statuses, and a drag-and-dro
 To make use of this package within your wiki, add the following lines to LocalSettings.php, below the inclusion of Page Exchange:
 
 ```php
-$wgPageExchangePackageFiles[] = 'https://raw.githubusercontent.com/yaronkoren/CanastaPM/main/page-exchange.json';
+$wgPageExchangePackageFiles[] = 'https://raw.githubusercontent.com/CanastaWiki/CanastaPM/main/page-exchange.json';
 $wgRestrictDisplayTitle = false;
 ```
