@@ -3,7 +3,7 @@
 	"author": "Yaron Koren",
 	"language": "en",
 	"licenseName": "CC-BY-SA 3.0",
-	"url": "https:\/\/github.com\/yaronkoren\/CanastaPM",
+	"url": "https:\/\/github.com\/CanastaWiki\/CanastaPM",
 	"packages": {
 		"Canasta PM": {
 			"globalID": "wiki.canasta.projectmanagement",
@@ -11,7 +11,7 @@
 			"version": "0.1",
 			"directoryStructure": {
 				"service": "GitHub",
-				"accountName": "yaronkoren",
+				"accountName": "CanastaWiki",
 				"repositoryName": "CanastaPM",
 				"namespaceSettings": [
 					{
