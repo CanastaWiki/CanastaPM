@@ -26,7 +26,7 @@ table.kanban th {
 .kanban-tile > div.open {
 	background: #ddf0ff;
 }
-.kanban-tile > div.in-work {
+.kanban-tile > div.in-progress {
 	background: #daffe0;
 }
 .kanban-tile > div.ready-for-review {
@@ -35,8 +35,11 @@ table.kanban th {
 .kanban-tile > div.blocked {
 	background: #ffe5e8;
 }
-.kanban-tile > div.closed {
+.kanban-tile > div.completed {
 	background: #ffefdc;
+}
+.kanban-tile > div.declined {
+	background: #efeff7;
 }
 .kanban-tile:hover {
 	background: #fff;
