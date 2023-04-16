@@ -91,11 +91,10 @@
 !Task
 !Due date
 !Assignee(s)
-!Reporter(s)
 !Status
 !Labels
 {{#cargo_query: tables=Tasks
-|fields=_pageName=Page,Task=Task,Date_due=Date_due,Assignees=Assignees,Reporters=Reporters,Status=Status,Labels=Labels
+|fields=_pageName=Page,Task,Date_due,Assignees,Status,Labels
 |where=Project='{{FULLPAGENAME}}'
 |format=template
 |template=Task table row
