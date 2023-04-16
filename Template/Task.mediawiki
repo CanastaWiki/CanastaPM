@@ -1,5 +1,5 @@
 <noinclude>
-{{#template_params:Project|Task|Date due|Assignees|Reporters|Status|Date ended|Labels|Related pages|Resolution}}
+{{#template_params:Project|Task|Date due|Assignees|Status|Date ended|Labels|Related pages|Resolution}}
 {{#cargo_declare: _table=Tasks
 |Project=Page (mandatory)
 |Task=String (mandatory)
