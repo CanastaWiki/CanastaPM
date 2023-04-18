@@ -54,9 +54,9 @@
 |}
 <!--
 
---><div class="project-overview kanban">{{#vardefine: tcount|{{#cargo_query: tables=Tasks|fields=COUNT(_pageTitle)|where=Project='{{FULLPAGENAME}}'}}}}
+--><div class="project-overview kanban">
 = Kanban =
-<p>Tasks: {{#var:tcount}}</p>
+<p>Tasks: {{#cargo_query: tables=Tasks|fields=COUNT(_pageTitle)|where=Project='{{FULLPAGENAME}}'}}</p>
 {| class="wikitable kanban" width=100%
 {{#arraymap: {{Get status list}}
   |,
@@ -86,7 +86,6 @@
 }}
 |}
 = All tasks =
-<p>Tasks: {{#var:tcount}}</p>
 {| class="wikitable sortable all-tasks" width=100%
 !Task
 !Due date
