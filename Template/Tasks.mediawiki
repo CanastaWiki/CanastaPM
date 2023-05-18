@@ -1,0 +1,74 @@
+{{#ifeq:{{NAMESPACE}}|User||<h2>{{Get name|{{{1|{{FULLPAGENAME}}}}}}}</h2>}}<!--
+
+--><div class="project-overview kanban">
+= Kanban=
+<p>Tasks: {{#cargo_query: tables=Tasks|fields=COUNT(*)|where=Assignees HOLDS '{{{1|{{FULLPAGENAME}}}}}'}}</p>
+{| class="wikitable kanban" width=100%
+{{#arraymap: {{Get status list}}
+  |,
+  |@@@
+  |! width=16.66% {{!}}@@@ ({{#cargo_query: tables=Tasks|fields=COUNT(*)|where=Assignees HOLDS '{{{1|{{FULLPAGENAME}}}}}' AND Status = '@@@'}}) 
+  |\n
+}}
+|- valign=top
+{{#arraymap: {{Get status list}}
+  |,
+  |@@@
+  |{{!}} 
+{{{!}} class="sortable kanban" width=100% cellspacing="6"
+{{!}}-
+! style="height:1rem; display: block" {{!}}
+{{#cargo_query: tables=Tasks
+  |fields=_pageName=Page,Task,Date_due,Assignees,Labels,Project
+  |where=Assignees HOLDS '{{{1|{{FULLPAGENAME}}}}}' AND Status='@@@'
+  |format=template
+  |template=Task kanban tile{{!}}Status={{#replace:{{lc:@@@}}| |-}}{{!}}Show project=yes
+  |no html
+  |named args=yes
+}}
+{{!}}} 
+  |\n
+}}
+|}
+= Assigned tasks =
+{| class="wikitable sortable kanban" width=100%
+!Task
+!Due Date
+!Assignee(s)
+!Status
+!Labels
+!Project
+{{#cargo_query: tables=Tasks
+|fields=_pageName=Page,Task,Date_due,Assignees,Status,Labels,Project
+|where=Assignees HOLDS '{{{1|{{FULLPAGENAME}}}}}' 
+|format=template
+|template=Task table row{{!}}Show project=yes
+|no html
+|named args=yes
+|default={{!}}-
+{{!}} colspan=7 {{!}} No results.
+}}
+|}
+= For review =
+<p>Tasks: {{#cargo_query: tables=Tasks|fields=COUNT(*)|where={{#arraymap: {{Get status list|Is ready for review=1}}|,|@@@|Status = '@@@'|\sOR\s}} }}</p>
+{| class="wikitable sortable kanban" width=100%
+!Task
+!Due Date
+!Assignee(s)
+!Details
+!Labels
+!Project
+{{#cargo_query: tables=Tasks
+|fields=_pageName=Page,Task,Date_due,Assignees,Labels,Project
+|where={{#arraymap: {{Get status list|Is review status=1}}|,|@@@|Status LIKE '@@@'|\sOR\s}}
+|format=template
+|template=Task for review table row{{!}}Show project=yes
+|no html
+|named args=yes
+|default={{!}}-
+{{!}} colspan=6 {{!}} No results.
+}}
+|}
+<headertabs/>
+__NOTOC__
+</div>
